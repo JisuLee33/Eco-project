@@ -67,26 +67,29 @@ a {
 
 header {
     width:100%;
-    height:130px;
+    height:110px;
     background-color: #eee;
     @include flex(center, center, nowrap);
     opacity:0.8;
     position:fixed;
     z-index:200;
+    
+    .fa-bars {display: none;}
 
     img {
-        width:160px;
-        height:auto;
+        width:110px;
+        height:93.75px;
         &:hover {
         opacity:1;
         cursor:pointer;
+        
         }
     }
 
     h1 {
         color: #555;
         font-size: 1.95vw;
-        line-height:150px;
+        line-height:110px;
         margin:auto 20px;
     }
 
@@ -112,24 +115,21 @@ header {
 /* -- .top_page start --  */
 
 .top_page {
-  width:70%;
+  width:80%;
   height:800px;
   margin: $marginCenter;
   @include flex(space-evenly, none, nowrap);
   align-items: center;  
-
-  .fa-bars {
-    display: none;
-  }
 }
 
 .left {
-  width:500px;
-  height:30vw;
+  width:70%;
+  height:220px;
   display:inline-flex;
-  flex-flow:column wrap;
+  flex-flow:column;
   justify-content:center;
   line-height:70px;
+  padding: 20px;
   border: $borderTest;
     
   h2 {
@@ -139,23 +139,21 @@ header {
     
   p {
     padding:10px;
-    font-size:27px;
+    font-size:25px;
     line-height:40px;
     }
 
 }
 
 .right {
-  width:100px;
+  width:150px;
   height:400px;
-  line-height:40px;
+  line-height:60px;
   font-size:20px;
-  padding:10px;
+  padding:40px 20px;
   border: $borderTest;
   
-  .fa-bars {
-    display: none;
-  }
+  
 }
 
 .slide_con {
@@ -208,7 +206,7 @@ header {
 /* -- .save start --  */
 
 .save {
- width:1200px;
+ width:80%;
  height:650px;
  margin:50px auto;
  border:1px solid #333;
@@ -329,7 +327,7 @@ video {
 
 .video h2 {
  margin:30px auto;
- width:450px;
+ width:auto;
  text-align:center;
  color:rgb(243, 129, 22);
  padding:20px;
@@ -394,16 +392,31 @@ footer {
 /* -- footer end --  */
 
 @media(min-width:768px) and (max-width:1024){
-  header > h2 {display:none;}
+  header > h2 {
+    display:none;
+   
+  }
+
+  .top_page {
+    .left {
+
+    }
+  }
 }
 
 @media(max-width:767px){
   header {
+    display:flex;
+    justify-content: space-around;
     height:100px;
     h1 {display:none;}
-    h2 {margin:auto 20px; color:#555; display:block;}
     img {width:110px; height:89px;}
     
+    .fa-bars {
+      display: block;
+      font-size: 45px;
+      margin: auto 0;
+    }
   }
 
   .top_page {
@@ -412,6 +425,7 @@ footer {
     height:700px;
 
     .left {
+      width:100%;
       h2 {font-size:10vw;}
       p {font-size:3.5vw;}
     }
@@ -439,9 +453,18 @@ footer {
 }
 
 @media(max-width:320px) {
-  .right {
-  display: none;
-  }    
+  header {
+    width: 100%;
+  }
+
+  .top_page {
+    width: 100%;
+    margin: 0 auto;
+    .left {
+      margin: 0 auto;
+    }
+  }
+   
   .fa-bars {
     display: block;
   }
