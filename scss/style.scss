@@ -1,8 +1,14 @@
 @charset "UTF-8";
+// color palette : British Palette
+// #00a8ff - 하늘색
+// #487eb0 - 군청색
+// #fbc531 - 노란색
+// #4cd137 - 연두색
+// #2f3640 - 흑색
 
 $marginCenter : 0 auto;
 $width : 100%;
-$borderTest : 1px solid #333;
+$fontColor : #2f3640;
 
 @mixin flex($x, $y, $w){
     display : flex;
@@ -39,6 +45,7 @@ body {
   box-sizing:border-box;
   margin:0;
   padding:0;
+  
 }
 
 #wrap {
@@ -46,6 +53,7 @@ body {
   @include flex(none, center, nowrap);
   flex-flow:column wrap;
   -ms-overflow-style:none;
+  color : $fontColor;
 }
 
 // body::-webkit-scrollbar {
@@ -68,7 +76,7 @@ a {
 header {
     width:100%;
     height:100px;
-    background-color: #eee;
+    background-color: #dcdde1;
     @include flex(center, center, nowrap);
     opacity:0.8;
     position:fixed;
@@ -87,7 +95,7 @@ header {
     }
 
     h1 {
-        color: #555;
+        color: #353b48;
         font-size: 1.95vw;
         line-height:110px;
         margin:auto 20px;
@@ -98,15 +106,19 @@ header {
     }
    
     button {
-        width:90px;
-        line-height:40px;
+        width:110px;
+        line-height:50px;
         margin:auto 0;
-        border:3px solid #f0932b;
+        color: #2f3640;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        background-color: #fbc531;
 
         &:hover {
-        opacity:0.7;
         cursor:pointer;
-        background-color:#f0932b ;
+        background-color:#4cd137;
         } 
     }
 }
@@ -130,7 +142,6 @@ header {
   justify-content:center;
   line-height:70px;
   padding: 20px;
-  border: $borderTest;
     
   h2 {
     font-size:80px;
@@ -151,7 +162,6 @@ header {
   line-height:60px;
   font-size:20px;
   padding:40px 20px;
-  border: $borderTest;
   
   
 }
@@ -189,7 +199,7 @@ header {
  height:120px;
  padding:15px;
  text-align: center;
- background-color: #7ed6dfb3;
+ background-color: #00a8ff;
  border-radius:10%;
  font-size:17px;
 }
@@ -209,7 +219,6 @@ header {
  width: 95%;
  height: auto;
  margin:50px auto;
- border:1px solid #333;
  
 }
 
@@ -283,7 +292,6 @@ header {
 .store p {
  font-size:20px;
  color:skyblue;
- width:100%;
  margin-left:200px;
 }
 
@@ -297,10 +305,7 @@ header {
 .s_img{
   width: 540px;
   margin: 10px auto;
-  border : 7px solid #00a8ff;
-  border-radius: 5px;
-  
- overflow: hidden;
+  overflow: hidden;
   img{
   display: block;
   margin: 0 auto;
@@ -311,16 +316,13 @@ header {
  opacity:0.7;
  transform: scale(0.9);
 }
-
 /* -- .store end --  */
 
 /* -- .video start --  */
-
 .video {
- width:90%;
- height:1650px;
- border:1px solid #333;
- margin:50px auto;
+ width: 100%;
+ height: auto;
+ margin-top: 50px;
 }
 
 video {
@@ -328,13 +330,11 @@ video {
 }
 
 .video h2 {
- margin:30px auto;
- width:auto;
+ margin:10px auto;
  text-align:center;
- color:rgb(243, 129, 22);
- padding:20px;
+ color:#487eb0;
+ padding:10px;
  font-size:30px;
- border:10px solid rgb(243, 129, 22);
 }
 
 #vi_bottom {
@@ -347,11 +347,12 @@ video {
 }
 
 .vi_left {
- width:600px;
+ width: 572px;
  height:400px;
  text-align: center;
  padding:40px;
- border:10px solid rgb(243, 129, 22);
+ border: 25px solid #487eb0;
+ border-radius: 4px;
  margin:20px;
 }
 
@@ -368,27 +369,33 @@ video {
 }
 
 .vi_right {
- width:600px;
+ width: 572px;
  height:400px;
  margin:20px;
- border:10px solid rgb(243, 129, 22);
+ border: 25px solid #487eb0;
+ border-radius: 4px;
 }
 /* -- .video end --  */
 
 /* -- footer start --  */
 
 footer {
- width:100%;
- height:500px;
- background-color: #eee;
+ max-width: 1200px;
+ height: 300px;
  display:flex;
  flex-wrap:wrap;
+ margin: 0 auto;
  justify-content: space-around;
 }
 
 .foot_box {
- width:23%;
- border:1px solid #333;
+  width: 292px;
+  margin-right: 6px;
+  background-color: #718093;
+  border-radius: 4px;
+  padding: 20px;
+  line-height: 30px;
+  text-align: center;
 }
 
 /* -- footer end --  */
@@ -409,12 +416,6 @@ footer {
     display:none;
    
   }
-
-  // .top_page {
-  //   .left {
-
-  //   }
-  // }
 }
 
 @media(max-width:767px){
@@ -464,6 +465,12 @@ footer {
   .save {
     h1 {
       font-size: 8vw;
+    }
+  }
+  .store_slide {
+    height: 0;
+    img {
+      display: none;
     }
   }
 }
